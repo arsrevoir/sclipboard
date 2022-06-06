@@ -1,0 +1,44 @@
+@use 'vars';
+@use 'mixins';
+
+.container {
+  position: relative;
+
+  .button {
+    cursor: pointer;
+
+    &:hover {
+
+      svg path {
+        fill: vars.$gray;
+      }
+    }
+  }
+
+  .form {
+    position: absolute;
+    // top: 0;
+    right: 0;
+
+    .formContainer {
+      border: 1px solid vars.$black;
+      border-radius: .3em;
+      border-top-right-radius: 0;
+      background: vars.$white;
+
+      .wrapper {
+        padding: .3em;
+
+        .submit {
+
+          button {
+
+            &:hover {
+              color: vars.$gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}

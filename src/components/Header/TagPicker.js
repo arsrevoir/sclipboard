@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 
 import TagContext from '../../contexts/TagContext'
 
@@ -26,6 +26,8 @@ const TagPicker = () => {
     fetchTags()
   }, [])
 
+
+  const dropdownRef = useRef()
   const handleDropdown = () => {
     setDropdown(!dropdown)
   }
@@ -49,7 +51,7 @@ const TagPicker = () => {
         </div>
       </div>
       {dropdown &&
-        <div className={styles.dropdownContainer}>
+        <div className={styles.dropdownContainer} ref={dropdownRef}>
           <div className={styles.dropdownContainerWrapper}>
             <ul className={styles.list}>
               <li onClick={handleTagChange}>All</li>

@@ -21,3 +21,27 @@ body {
 ul, li {
   list-style: none;
 }
+
+input {
+  color: inherit;
+  background: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  &::placeholder,
+  &::-moz-placeholder,
+  &::-webkit-input-placeholder {
+    color: vars.$gray;
+  }
+}
+
+button {
+  color: inherit;
+  background: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  cursor: pointer;
+}
