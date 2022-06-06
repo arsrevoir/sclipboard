@@ -1,0 +1,23 @@
+@use 'vars';
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  transition: .2s color, fill;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: vars.$serif;
+  color: vars.$black;
+}
+
+ul, li {
+  list-style: none;
+}

@@ -1,0 +1,15 @@
+@use 'vars';
+
+.page {
+  margin: 0 auto;
+  max-width: 620px;
+
+  .pageWrapper {
+    border-right: 2px solid vars.$lightGray;
+    border-left: 2px solid vars.$lightGray;
+
+    .pageContent {
+      padding: 1em;
+    }
+  }
+}

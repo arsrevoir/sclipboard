@@ -1,0 +1,16 @@
+@use 'vars';
+@use 'mixins';
+
+header {
+  font-size: 2.4rem;
+
+  .container {
+    @include mixins.row-flex;
+    justify-content: space-between;
+
+  }
+
+  svg path {
+    fill: vars.$black;
+  }
+}

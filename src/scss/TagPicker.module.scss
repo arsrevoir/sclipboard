@@ -1,0 +1,50 @@
+@use 'vars';
+@use 'mixins';
+
+.container {
+  position: relative;
+  user-select: none;
+  
+  .selected {
+    @include mixins.row-flex;
+    align-items: center;
+    gap: .3em;
+    cursor: pointer;
+
+    .dropdownIcon {
+      display: flex;
+    }
+
+    &:hover {
+      color: vars.$gray;
+      
+      svg path {
+        fill: vars.$gray;
+      }
+    }
+  }
+
+  .dropdownContainer {
+    position: absolute;
+    border: 1px solid vars.$black;
+    border-radius: .2em;
+    background: vars.$white;
+
+    .dropdownContainerWrapper {
+      padding: .3em .5em;
+
+      .list {
+
+        li {
+          font-size: 1.8rem;
+          color: vars.$gray;
+          cursor: pointer;
+
+          &:hover {
+            color: vars.$black;
+          }
+        }
+      }
+    }
+  }
+}
