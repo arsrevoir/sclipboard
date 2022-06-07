@@ -3,4 +3,10 @@
 @mixin row-flex {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+@mixin border {
+  border: 2px solid vars.$black;
+  border-radius: .3em;
 }

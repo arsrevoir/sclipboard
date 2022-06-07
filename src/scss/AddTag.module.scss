@@ -1,0 +1,39 @@
+@use 'vars';
+@use 'mixins';
+
+
+.container {
+  @include mixins.row-flex;
+  gap: .2em;
+
+  button {
+    display: flex;
+      svg {
+        width: .6em;
+        
+        path {
+          fill: vars.$gray;
+        }
+      }
+      &:hover {
+        svg path {
+          fill: vars.$black;
+        }
+      }
+    }
+    
+  input,
+  .save {
+    font-size: 1.8rem;
+    color: vars.$gray;
+  }
+
+  .save:hover {
+    color: vars.$black;
+  }
+
+  input {
+    width: 5em;
+  }
+}
+

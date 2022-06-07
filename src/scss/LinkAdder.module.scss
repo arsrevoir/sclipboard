@@ -4,34 +4,31 @@
 .container {
   position: relative;
 
-  .button {
-    cursor: pointer;
-
-    &:hover {
-
-      svg path {
-        fill: vars.$gray;
-      }
-    }
+  button {
+    display: flex;
   }
 
   .form {
     position: absolute;
-    // top: 0;
+    top: 0;
     right: 0;
 
     .formContainer {
-      border: 1px solid vars.$black;
-      border-radius: .3em;
+      @include mixins.border;
       border-top-right-radius: 0;
       background: vars.$white;
 
       .wrapper {
         padding: .3em;
 
-        .submit {
+        .link {
+          width: 6em;
+        }
 
+        .submit {
           button {
+            @include mixins.row-flex;
+            gap: .2em;
 
             &:hover {
               color: vars.$gray;
@@ -39,6 +36,14 @@
           }
         }
       }
+    }
+  }
+}
+
+button {
+  &:hover {
+    svg path {
+      fill: vars.$gray;
     }
   }
 }

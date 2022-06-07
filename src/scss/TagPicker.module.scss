@@ -26,8 +26,7 @@
 
   .dropdownContainer {
     position: absolute;
-    border: 1px solid vars.$black;
-    border-radius: .2em;
+    @include mixins.border;
     background: vars.$white;
 
     .dropdownContainerWrapper {
@@ -39,6 +38,7 @@
           font-size: 1.8rem;
           color: vars.$gray;
           cursor: pointer;
+          white-space: nowrap;
 
           &:hover {
             color: vars.$black;

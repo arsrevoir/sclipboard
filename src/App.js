@@ -6,14 +6,15 @@ import Header from './components/Header'
 import styles from './scss/App.module.scss'
 
 const App = () => {
-  const [selected, setSelected] = useState('All')
+  const [tag, setTag] = useState('All')
 
   return (
     <div className={styles.page}>
       <div className={styles.pageWrapper}>
         <div className={styles.pageContent}>
-          <TagContext.Provider value={{selected, setSelected}}>
+          <TagContext.Provider value={{tag, setTag}}>
             <Header />
+            
           </TagContext.Provider>
         </div>
       </div>

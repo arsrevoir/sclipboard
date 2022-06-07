@@ -7,7 +7,6 @@ header {
   .container {
     @include mixins.row-flex;
     justify-content: space-between;
-
   }
 
   svg path {
