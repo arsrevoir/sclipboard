@@ -1,0 +1,12 @@
+@use 'vars';
+@use 'mixins';
+
+
+main {
+  padding-top: 2em;
+
+  .column {
+    @include mixins.column-flex;
+    gap: .3em;
+  }
+}

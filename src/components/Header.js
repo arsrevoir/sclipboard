@@ -5,12 +5,7 @@ import LinkAdder from './Header/LinkAdder'
 
 import styles from '../scss/Header.module.scss'
 
-const Header = () => {
-  const [forceRender, setForceRender] = useState(false)
-
-  const rerender = () => {
-    setForceRender(!forceRender)
-  }
+const Header = ({rerender, forceRender}) => {
 
   return(
     <header>

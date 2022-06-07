@@ -40,25 +40,28 @@ const TagPicker = ({rerender, forceRender}) => {
   }
 
   const handleTagChange = (e) => {
-    setTag(e.target.getAttribute('data-value'))
+    setTag({
+      id: e.target.getAttribute('data-id'),
+      name: e.target.getAttribute('data-name')
+    })
     setActive(!active)
   }
 
   const handleContextMenu = (e) => {
     e.preventDefault()
-    postData('http://localhost:5000/category/delete', [['name', e.target.getAttribute('data-value')]])
+    postData('http://localhost:5000/category/delete', [['_id', e.target.getAttribute('data-id')]])
     rerender()
   }
   
   const dropdownList = tagList ? tagList.map((tag, index) => {
-    return <li onContextMenu={handleContextMenu} onClick={handleTagChange} key={index} data-value={tag.name}>{tag.name}</li>
+    return <li onContextMenu={handleContextMenu} onClick={handleTagChange} key={index} data-name={tag.name} data-id={tag._id}>{tag.name}</li>
   }) : <li></li>
 
   return(
     <div ref={containerRef} className={styles.container}>
       <div onClick={handleDropdown} className={styles.selected}>
         <div className={styles.selectedName}>
-          {tag}
+          {tag.name}
         </div>
 
         <div className={styles.dropdownIcon}>
@@ -70,7 +73,7 @@ const TagPicker = ({rerender, forceRender}) => {
         <div className={styles.dropdownContainer}>
           <div className={styles.dropdownContainerWrapper}>
             <ul className={styles.list}>
-              <li data-value='All' onContextMenu={handleContextMenu} onClick={handleTagChange}>All</li>
+              <li data-name='All' data-id='0' onContextMenu={handleContextMenu} onClick={handleTagChange}>All</li>
               {dropdownList}
               <AddTag rerender={rerender} />
             </ul>

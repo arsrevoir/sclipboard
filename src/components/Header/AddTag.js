@@ -5,18 +5,18 @@ import { ReactComponent as PlusIcon } from '../../icons/plus.svg'
 
 const AddTag = ({ rerender }) => {
   const [active, setActive] = useState(false)
-  const [link, setLink] = useState(null)
+  const [tag, setTag] = useState(null)
 
   const handleClick = () => {
     setActive(!active)
   }
 
   const handleChange = (e) => {
-    setLink(e.target.value)
+    setTag(e.target.value)
   }
 
   const handleSubmit = () => {
-    postData('http://localhost:5000/category/new/', [['link', link]])
+    postData('http://localhost:5000/category/new/', [['name', tag]])
     rerender()
   }
 

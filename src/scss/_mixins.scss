@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+@mixin column-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 @mixin border {
   border: 2px solid vars.$black;
   border-radius: .3em;

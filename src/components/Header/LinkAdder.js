@@ -46,6 +46,7 @@ const LinkAdder = ({rerender, forceRender}) => {
   const handleSubmit = () => {
     postData('http://localhost:5000/pin/new', [['link', link], ['tag', tag]])
     setActive(false)
+    rerender()
   }
 
   return(
@@ -61,7 +62,7 @@ const LinkAdder = ({rerender, forceRender}) => {
               <select onChange={handleTagInputChange}>
                 <option defaultValue>Select</option>
                 {tagList.map((tag, index) => {
-                  return <option value={tag.name} key={index}>{tag.name}</option>
+                  return <option value={tag._id} key={index}>{tag.name}</option>
                 })}
               </select>
 
